@@ -1,0 +1,13 @@
+---
+- name: Test hello module
+  hosts: localhost  
+  
+  tasks:
+    - name: run the new hello module
+      hello:
+        name: 'Avinash Pawar'
+      register: helloout
+
+    - name: dump test output
+      debug:
+        msg: '{{ helloout }}'
